@@ -21,7 +21,7 @@ const BuyCredit = () => {
       order_id: order.id,
       receipt: order.receipt,
       handler: async (response) => {
-        console.log(response);
+        // console.log(response);
 
         try {
           const { data } = await axios.post('https://imagi-fy-eta.vercel.app/api/user/verify-razor', response, { headers: { token } })
@@ -40,7 +40,7 @@ const BuyCredit = () => {
   }
 
   const paymentRazorpay = async (planId) => {
-    console.log("Plan id in paymentrazor: " + planId);
+    // console.log("Plan id in paymentrazor: " + planId);
 
     try {
       if (!user) {

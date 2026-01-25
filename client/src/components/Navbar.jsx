@@ -72,7 +72,7 @@ const Navbar = () => {
                     {user ? (
                         <div className='flex flex-col p-5 gap-4'>
                             <p className='text-gray-600 font-semibold text-lg'>Hi, {user.name}</p>
-                            <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className='bg-red-500 text-white px-4 py-3 rounded-full hover:bg-red-600 transition-all font-medium text-base'>Logout</button>
+                            <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className='bg-black text-white px-4 py-3 rounded-full hover:bg-gray-800 transition-all font-medium text-base'>Logout</button>
                         </div>
                     ) : (
                         <div className='flex flex-col p-5 gap-4'>

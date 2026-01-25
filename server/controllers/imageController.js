@@ -42,7 +42,7 @@ const generateImage = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("Error in GenerateImage:", error);
+        // console.log("Error in GenerateImage:", error);
         res.json({ success: false, message: "generateImage error ::" + error.message })
     }
 }

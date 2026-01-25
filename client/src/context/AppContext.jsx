@@ -17,9 +17,9 @@ const AppContextProvider = (props) => {
 
     const loadCreditData = async () => {
         try {
-            console.log('Loading credit data with token:', token);
+            // console.log('Loading credit data with token:', token);
             const { data } = await axios.get('https://imagi-fy-eta.vercel.app/api/user/credits', { headers: { token } })
-            console.log('Credit data response:', data);
+            // console.log('Credit data response:', data);
 
             if (data.success == false) {
                 toast.error("login creditdata are not success")
@@ -29,7 +29,7 @@ const AppContextProvider = (props) => {
                 setUser(data.user)
             }
         } catch (error) {
-            console.log('Error loading credits:', error);
+            // console.log('Error loading credits:', error);
             toast.error(error.message)
         }
     }

@@ -28,7 +28,7 @@ const registerUser = async (req, res) => {
         res.json({ success: true, token, user: { name: user.name } })
     }
     catch (error) {
-        console.log("Error in Register User:", error);
+        // console.log("Error in Register User:", error);
         res.json({ success: false, message: "registerUser error ::" + error.message })
     }
 }
@@ -51,7 +51,7 @@ const loginUser = async (req, res) => {
 
         }
     } catch {
-        console.log("Error in Login User:", error);
+        // console.log("Error in Login User:", error);
         res.json({ success: false, message: "loginUser error ::" + error.message })
     }
 }
@@ -59,7 +59,7 @@ const loginUser = async (req, res) => {
 const userCredits = async (req, res) => {
     try {
         const userId = req.user?.userId;
-        console.log("Getting credits for userId:", userId);
+        // console.log("Getting credits for userId:", userId);
         if (!userId) {
             return res.json({ success: false, message: "User ID not found in token" })
         }
@@ -70,7 +70,7 @@ const userCredits = async (req, res) => {
         res.json({ success: true, credits: user.creditBalance, user: { name: user.name } })
 
     } catch (error) {
-        console.log("Error in credits:", error);
+        // console.log("Error in credits:", error);
         res.json({ success: false, message: "userCredits error ::" + error.message })
     }
 }
@@ -133,7 +133,7 @@ const paymentRazorpay = async (req, res) => {
         })
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.json({ success: false, message: error.message })
     }
 }
@@ -157,7 +157,7 @@ const verifyRazorpay = async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.json({ success: false, message: error.message })
     }
 }
