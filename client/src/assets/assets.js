@@ -59,24 +59,24 @@ export const stepsData = [
 export const testimonialsData = [
   {
     image: profile_img_1,
-    name: 'Donald Jackman',
+    name: 'Rahul Sharma',
     role: 'Graphic Designer',
     stars: 3,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `This image generator is seriously impressive. The quality and details are amazing, and it saves me so much time for my creative projects. Super easy to use!`
   },
   {
     image: profile_img_2,
-    name: 'Richard Nelson',
-    role: 'Content Creator',
+    name: 'Amit Verma',
+    role: 'Digital Marketer',
     stars: 5,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `I tried many AI image tools, but this one stands out. The images look realistic and professional. Perfect for social media and design work.`
   },
   {
     image: profile_img_1,
-    name: 'Donald Jackman',
-    role: ' Graphic Designer',
+    name: 'Vikram Singh',
+    role: ' Content Creator',
     stars: 5,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `Fast, reliable, and high-quality results every time. The customization options are great, and the output looks exactly how I imagined.`
   },
 ]
 
