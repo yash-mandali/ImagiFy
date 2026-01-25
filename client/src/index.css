@@ -1,11 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-*{
+* {
     font-family: Outfit;
-}       
-.placeholder-color{
-    color:#e0e0e0;
-    font-weight:300;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.placeholder-color {
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
 }

@@ -57,34 +57,34 @@ const Login = () => {
             viewport={{ once: true }}
             className=' fixed top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-xs bg-black/15 flex justify-center items-center'>
 
-            <form onSubmit={onSubmitHandler} className='relative bg-white p-10 rounded-xl text-slate-500'>
+            <form onSubmit={onSubmitHandler} className='relative bg-white p-6 sm:p-10 rounded-xl text-slate-500 mx-4 w-full sm:w-auto max-w-sm'>
 
-                <h1 className='text-center text-2xl text-neutral-700 font-medium'>{state}</h1>
-                <p className='text-sm'>Welcome back! Please sign in to continue.</p>
+                <h1 className='text-center text-xl sm:text-2xl text-neutral-700 font-medium'>{state}</h1>
+                <p className='text-xs sm:text-sm mt-2'>Welcome back! Please sign in to continue.</p>
 
                 {state !== 'Login' &&
-                    <div className='border px-6 py-2 flex items-center gap-2 rounded-full mt-5'>
-                        <img src={assets.email_icon} alt="" />
-                        <input type="text" onChange={e => setName(e.target.value)} value={name} className='outline-none text-sm' placeholder='Name' required />
+                    <div className='border px-4 sm:px-6 py-2 flex items-center gap-2 rounded-full mt-4'>
+                        <img src={assets.email_icon} className='w-4 sm:w-5' alt="" />
+                        <input type="text" onChange={e => setName(e.target.value)} value={name} className='outline-none text-xs sm:text-sm flex-1' placeholder='Name' required />
                     </div>}
 
-                <div className='border px-6 py-2 flex items-center gap-2 rounded-full mt-4'>
-                    <img src={assets.email_icon} alt="" />
-                    <input type="email" onChange={e => setEmail(e.target.value)} value={email} className='outline-none text-sm' placeholder='Email' required />
+                <div className='border px-4 sm:px-6 py-2 flex items-center gap-2 rounded-full mt-3 sm:mt-4'>
+                    <img src={assets.email_icon} className='w-4 sm:w-5' alt="" />
+                    <input type="email" onChange={e => setEmail(e.target.value)} value={email} className='outline-none text-xs sm:text-sm flex-1' placeholder='Email' required />
                 </div>
 
-                <div className='border px-6 py-2 flex items-center gap-2 rounded-full mt-4'>
-                    <img src={assets.lock_icon} alt="" />
-                    <input type="password" onChange={e => setPassword(e.target.value)} value={password} className='outline-none text-sm' placeholder='Password' required />
+                <div className='border px-4 sm:px-6 py-2 flex items-center gap-2 rounded-full mt-3 sm:mt-4'>
+                    <img src={assets.lock_icon} className='w-4 sm:w-5' alt="" />
+                    <input type="password" onChange={e => setPassword(e.target.value)} value={password} className='outline-none text-xs sm:text-sm flex-1' placeholder='Password' required />
                 </div>
 
-                <p className='text-sm text-blue-600 my-3 cursor-pointer'>Forgot password?</p>
+                <p className='text-xs sm:text-sm text-blue-600 my-3 cursor-pointer'>Forgot password?</p>
 
-                <button className='bg-blue-600 cursor-pointer w-full text-white py-2 rounded-full'>{state == 'Login' ? 'Login' : 'create account'}</button>
+                <button className='bg-blue-600 cursor-pointer w-full text-white py-2 rounded-full text-sm sm:text-base'>{state == 'Login' ? 'Login' : 'create account'}</button>
 
                 {state === 'Login' ?
-                    <p className='mt-5 text-center'>Don't have an account? <span className='text-blue-600 cursor-pointer' onClick={() => setState('Sign up')}>Sign up</span></p> :
-                    <p className='mt-5 text-center'>Already have an account? <span className='text-blue-600 cursor-pointer' onClick={() => setState('Login')}>Login</span></p>}
+                    <p className='mt-5 text-center text-xs sm:text-sm'>Don't have an account? <span className='text-blue-600 cursor-pointer' onClick={() => setState('Sign up')}>Sign up</span></p> :
+                    <p className='mt-5 text-center text-xs sm:text-sm'>Already have an account? <span className='text-blue-600 cursor-pointer' onClick={() => setState('Login')}>Login</span></p>}
                 <img
                     src={assets.cross_icon} alt="" onClick={() => setShowLogin(false)} className='absolute top-5 right-5 cursor-pointer  ' />
 
