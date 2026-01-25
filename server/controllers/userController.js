@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
         const newUser = new userModel(userData)
         const user = await newUser.save();
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "secret")
         res.json({ success: true, token, user: { name: user.name } })
     }
     catch (error) {
@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (isMatch) {
-            const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+            const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "secret")
             res.json({ success: true, token, user: { name: user.name } })
 
         } else {
@@ -76,8 +76,8 @@ const userCredits = async (req, res) => {
 }
 
 const razorpayInstance = new razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
+    key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_S5pzQXIgN2Rnwc",
+    key_secret: process.env.RAZORPAY_KEY_SECRET || "hwmV0zvdDf6Vyc9noybgWB4S",
 });
 
 const paymentRazorpay = async (req, res) => {
@@ -120,7 +120,7 @@ const paymentRazorpay = async (req, res) => {
 
         const options = {
             amount: amount * 100,
-            currency: process.env.CURRENCY,
+            currency: process.env.CURRENCY || "INR",
             receipt: newTransaction._id
         }
 
