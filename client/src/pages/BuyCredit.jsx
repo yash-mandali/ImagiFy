@@ -64,23 +64,23 @@ const BuyCredit = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className='min-h-[80vh] text-center pt-8 md:pt-14 mb-10 px-4'>
-      <button className='border border-gray-400 px-6 sm:px-10 py-1.5 sm:py-2 rounded-full mb-4 text-xs sm:text-sm'>Our Plans</button>
-      <h1 className='text-center text-2xl sm:text-3xl md:text-4xl font-medium mb-6 md:mb-10'>Choose the plan</h1>
+      <button className='border border-gray-400 px-8 sm:px-10 py-2 sm:py-2 rounded-full mb-6 text-sm sm:text-base font-medium'>Our Plans</button>
+      <h1 className='text-center text-3xl sm:text-3xl md:text-4xl font-semibold mb-8 md:mb-12'>Choose the plan</h1>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 justify-items-center'>
         {plans.map((item, index) => (
 
-          <div key={index} className='bg-white drop-shadow-md rounded-lg py-8 sm:py-12 px-6 sm:px-8 text-gray-600 hover:scale-105 transition-all duration-500 w-full max-w-sm'>
-            <img src={assets.logo_icon} className='w-8 sm:w-10' alt="lock_icon" />
-            <p className='mt-3 mb-1 font-semibold text-sm sm:text-base'>{item.id}</p>
-            <p className='text-xs sm:text-sm'>{item.desc}</p>
-            <p className='mt-4 sm:mt-6'>
-              <span className='text-2xl sm:text-3xl font-semibold'>
+          <div key={index} className='bg-white drop-shadow-md rounded-lg py-10 sm:py-12 px-8 sm:px-8 text-gray-600 hover:scale-105 transition-all duration-500 w-full max-w-sm'>
+            <img src={assets.logo_icon} className='w-10 sm:w-11' alt="lock_icon" />
+            <p className='mt-4 mb-2 font-semibold text-lg sm:text-base'>{item.id}</p>
+            <p className='text-base sm:text-base text-gray-700'>{item.desc}</p>
+            <p className='mt-6 sm:mt-6'>
+              <span className='text-3xl sm:text-3xl font-bold'>
                 ₹{item.price}
               </span>
-              <span className='text-xs sm:text-sm'>/{item.credits} credits</span>
+              <span className='text-base sm:text-base text-gray-600 ml-1'>/{item.credits} credits</span>
             </p>
-            <button onClick={() => paymentRazorpay(item.id)} className='w-full mt-6 sm:mt-8 bg-gray-800 text-xs sm:text-sm text-white rounded-md cursor-pointer py-2 sm:py-2.5 hover:bg-gray-900 transition-all'>
+            <button onClick={() => paymentRazorpay(item.id)} className='w-full mt-8 sm:mt-8 bg-gray-800 text-base sm:text-base text-white rounded-md cursor-pointer py-3 sm:py-3 hover:bg-gray-900 transition-all font-semibold'>
               {user ? 'purchase' : 'Get Started'}
             </button>
           </div>

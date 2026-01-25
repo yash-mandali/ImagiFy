@@ -26,21 +26,21 @@ const Header = () => {
             viewport={{ once: true }}
         >
             <motion.div
-                className='text-stone-500 inline-flex text-center gap-2 bg-white px-4 sm:px-6 py-1 rounded-full border border-neutral-500 text-xs sm:text-sm'
+                className='text-stone-500 inline-flex text-center gap-2 bg-white px-5 sm:px-6 py-2 rounded-full border border-neutral-500 text-sm sm:text-sm'
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 1 }}
                 viewport={{ once: true }}
             >
-                <p>
+                <p className='font-medium'>
                     Best Text to Image AI Generator
                 </p>
-                <img src={assets.star_icon} className='w-4' alt="" />
+                <img src={assets.star_icon} className='w-5' alt="" />
             </motion.div>
             <motion.h1
-                className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl max-w-[90%] sm:max-w-[400px] md:max-w-[600px] mx-auto mt-6 sm:mt-10 text-center font-bold'>Turn text to <span className='text-blue-600'>image</span>, in seconds.</motion.h1>
+                className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-[95%] sm:max-w-[400px] md:max-w-[600px] mx-auto mt-8 sm:mt-10 text-center font-bold leading-tight'>Turn text to <span className='text-blue-600'>image</span>, in seconds.</motion.h1>
             <motion.p
-                className='text-center max-w-xs sm:max-w-md md:max-w-lg mx-auto mt-3 sm:mt-5 text-sm sm:text-base'
+                className='text-center max-w-sm sm:max-w-md md:max-w-lg mx-auto mt-5 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-700'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
@@ -48,14 +48,14 @@ const Header = () => {
 
             <motion.button
                 onClick={onClickHandler}
-                className='text-xs sm:text-sm md:text-base lg:text-lg text-white bg-black w-auto mt-6 sm:mt-8 px-6 sm:px-10 md:px-12 py-2 sm:py-2.5 flex items-center gap-2 rounded-full cursor-pointer hover:scale-105 transition-all'
+                className='text-sm sm:text-base md:text-base lg:text-lg text-white bg-black w-auto mt-8 sm:mt-8 px-8 sm:px-10 md:px-12 py-3 sm:py-3 md:py-3 flex items-center gap-2 rounded-full cursor-pointer hover:scale-105 transition-all font-medium'
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ default: { duration: 0.5 }, opacity: { delay: 0.8 }, duration: 1 }}
             >Generate Images
-                <img src={assets.star_group} className='h-4 sm:h-5 md:h-6' alt="" />
+                <img src={assets.star_group} className='h-5 sm:h-5 md:h-6' alt="" />
             </motion.button>
 
             <motion.div

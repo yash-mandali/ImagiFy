@@ -39,23 +39,23 @@ const Result = () => {
           <span className={`absolute bottom-0 left-0 h-1 bg-blue-500 ${loading ? 'w-full transition-all duration-[10s]' : 'w-0'}`} />
         </div>
       </div>
-      <p className={`text-sm sm:text-base mt-2 ${!loading ? 'hidden' : ''}`}>Loading...</p>
+      <p className={`text-base sm:text-lg mt-3 ${!loading ? 'hidden' : ''}`}>Loading...</p>
 
       {!isImageLoaded &&
-        <div className='flex flex-col sm:flex-row w-full max-w-xs sm:max-w-xl bg-neutral-500 rounded-full text-white text-xs sm:text-sm p-0.5 mt-6 sm:mt-10'>
+        <div className='flex flex-col sm:flex-row w-full max-w-xs sm:max-w-xl bg-neutral-500 rounded-full text-white text-sm sm:text-base p-1 mt-8 sm:mt-10 gap-1 sm:gap-0'>
           <input
             onChange={e => setInput(e.target.value)}
             value={input}
-            type="text" placeholder='Describe what you want to generate' className='flex-1 bg-transparent outline-none px-4 sm:px-8 py-2 sm:py-3 placeholder-color' />
+            type="text" placeholder='Describe what you want to generate' className='flex-1 bg-transparent outline-none px-6 sm:px-8 py-3 sm:py-3 placeholder-color text-base' />
           <button
-            className='bg-zinc-900 px-6 sm:px-10 md:px-16 py-2 sm:py-3 rounded-full text-white text-xs sm:text-sm hover:bg-zinc-800 transition-all'
+            className='bg-zinc-900 px-6 sm:px-12 md:px-16 py-3 sm:py-3 rounded-full text-white text-base font-medium hover:bg-zinc-800 transition-all'
             type="submit">Generate</button>
         </div>
       }
       {isImageLoaded &&
-        <div className='flex gap-2 flex-wrap justify-center text-white text-xs sm:text-sm p-0.5 mt-6 sm:mt-10'>
-          <button onClick={() => { setIsImageLoaded(false) }} className='bg-transparent border border-zinc-900 text-black px-4 sm:px-8 py-2 sm:py-3 rounded-full cursor-pointer hover:bg-gray-100 transition-all'>Generate Another</button>
-          <a href={image} download className='bg-zinc-900 px-4 sm:px-10 py-2 sm:py-3 rounded-full cursor-pointer hover:bg-zinc-800 transition-all'>Download</a>
+        <div className='flex gap-3 flex-wrap justify-center text-white text-base p-2 mt-8 sm:mt-10'>
+          <button onClick={() => { setIsImageLoaded(false) }} className='bg-transparent border border-zinc-900 text-black px-6 sm:px-8 py-3 sm:py-3 rounded-full cursor-pointer hover:bg-gray-100 transition-all font-medium text-base'>Generate Another</button>
+          <a href={image} download className='bg-zinc-900 px-6 sm:px-10 py-3 sm:py-3 rounded-full cursor-pointer hover:bg-zinc-800 transition-all font-medium text-base'>Download</a>
         </div>
       }
     </motion.form>

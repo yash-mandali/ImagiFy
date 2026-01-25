@@ -23,8 +23,8 @@ const GenerateBtn = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className='text-center pb-12 md:pb-16 px-4'>
-      <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 sm:mt-4 font-semibold text-neutral-800 py-4 sm:py-6 md:py-16'>See the magic. Try now</h1>
-      <button onClick={onClickHandler} className='inline-flex items-center gap-2 px-5 sm:px-8 lg:px-12 py-2 sm:py-3 rounded-full bg-black text-white text-sm sm:text-base hover:scale-105 transition-all duration-500 cursor-pointer'>
+      <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-4xl mt-4 sm:mt-4 font-semibold text-neutral-800 py-6 sm:py-8 md:py-16'>See the magic. Try now</h1>
+      <button onClick={onClickHandler} className='inline-flex items-center gap-2 px-8 sm:px-10 lg:px-12 py-3 sm:py-3 rounded-full bg-black text-white text-base sm:text-base font-medium hover:scale-105 transition-all duration-500 cursor-pointer'>
         Generate Images
         <img src={assets.star_group} alt="" className='h-4 sm:h-6' />
       </button>
