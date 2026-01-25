@@ -46,16 +46,16 @@ const Result = () => {
           <input
             onChange={e => setInput(e.target.value)}
             value={input}
-            type="text" placeholder='Describe what you want to generate' className='flex-1 bg-transparent outline-none px-6 sm:px-8 py-3 sm:py-3 placeholder-color text-base' />
+            type="text" placeholder='Describe what you want to generate' className='flex-1 bg-transparent outline-none px-4 sm:px-8 py-3 sm:py-3 placeholder-color text-sm sm:text-base' />
           <button
-            className='bg-zinc-900 px-6 sm:px-12 md:px-16 py-3 sm:py-3 rounded-full text-white text-base font-medium hover:bg-zinc-800 transition-all'
+            className='bg-zinc-900 px-6 sm:px-12 md:px-16 py-3 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium hover:bg-zinc-800 transition-all whitespace-nowrap'
             type="submit">Generate</button>
         </div>
       }
       {isImageLoaded &&
-        <div className='flex gap-3 flex-wrap justify-center text-white text-base p-2 mt-8 sm:mt-10'>
-          <button onClick={() => { setIsImageLoaded(false) }} className='bg-transparent border border-zinc-900 text-black px-6 sm:px-8 py-3 sm:py-3 rounded-full cursor-pointer hover:bg-gray-100 transition-all font-medium text-base'>Generate Another</button>
-          <a href={image} download className='bg-zinc-900 px-6 sm:px-10 py-3 sm:py-3 rounded-full cursor-pointer hover:bg-zinc-800 transition-all font-medium text-base'>Download</a>
+        <div className='flex gap-2 sm:gap-4 flex-wrap justify-center text-white text-sm sm:text-base p-2 mt-8 sm:mt-10 w-full max-w-md sm:max-w-lg'>
+          <button onClick={() => { setIsImageLoaded(false) }} className='flex-1 min-w-32 sm:flex-none bg-transparent border border-zinc-900 text-black px-4 sm:px-8 py-2.5 sm:py-3 rounded-full cursor-pointer hover:bg-gray-100 transition-all font-medium text-xs sm:text-base whitespace-nowrap'>Generate Another</button>
+          <a href={image} download className='flex-1 min-w-24 sm:flex-none bg-zinc-900 px-4 sm:px-10 py-2.5 sm:py-3 rounded-full cursor-pointer hover:bg-zinc-800 transition-all font-medium text-xs sm:text-base text-center whitespace-nowrap'>Download</a>
         </div>
       }
     </motion.form>
