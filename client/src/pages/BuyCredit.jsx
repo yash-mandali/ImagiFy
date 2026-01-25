@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const BuyCredit = () => {
 
-  const { user, backendUrl, token, loadCreditData,setShowLogin } = useContext(AppContext)
+  const { user, token, loadCreditData,setShowLogin } = useContext(AppContext)
   const navigate = useNavigate()
 
   const initPay = async (order) => {
@@ -24,7 +24,7 @@ const BuyCredit = () => {
         console.log(response);
 
         try {
-          const { data } = await axios.post(backendUrl + '/api/user/verify-razor', response, { headers: { token } })
+          const { data } = await axios.post('https://imagi-fy-eta.vercel.app/api/user/verify-razor', response, { headers: { token } })
           if (data.success) {
             loadCreditData();
             navigate('/')
@@ -47,7 +47,7 @@ const BuyCredit = () => {
         setShowLogin(true)
         return
       }
-      const { data } = await axios.post(backendUrl + '/api/user/pay-razor', { planId }, { headers: { token } });
+      const { data } = await axios.post('https://imagi-fy-eta.vercel.app/api/user/pay-razor', { planId }, { headers: { token } });
       if (data.success) {
         initPay(data.order)
       }

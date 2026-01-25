@@ -12,13 +12,13 @@ const AppContextProvider = (props) => {
     const [token, setToken] = useState(localStorage.getItem('token'))
     const [credit, setCredit] = useState(0)
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://imagi-fy-eta.vercel.app"
+    
     const navigate = useNavigate()
 
     const loadCreditData = async () => {
         try {
             console.log('Loading credit data with token:', token);
-            const { data } = await axios.get(backendUrl + '/api/user/credits', { headers: { token } })
+            const { data } = await axios.get('https://imagi-fy-eta.vercel.app/api/user/credits', { headers: { token } })
             console.log('Credit data response:', data);
 
             if (data.success == false) {
@@ -36,7 +36,7 @@ const AppContextProvider = (props) => {
 
     const generateImage = async (prompt) => {
         try {
-            const { data } = await axios.post(backendUrl + '/api/image/generate-image', { userId: user?._id, prompt }, { headers: { token } })
+            const { data } = await axios.post('https://imagi-fy-eta.vercel.app/api/image/generate-image', { userId: user?._id, prompt }, { headers: { token } })
             if (data.success) {
                 loadCreditData()
                 return data.image
@@ -78,7 +78,7 @@ const AppContextProvider = (props) => {
         loadCreditData,
         logout,
         generateImage,
-        backendUrl,
+      
     };
     return (
         <AppContext.Provider value={value}>
