@@ -47,7 +47,7 @@ const BuyCredit = () => {
         setShowLogin(true)
         return
       }
-      const { data } = await axios.post('https://imagi-fy-eta.vercel.app/api/user/pay-razor', { planId }, { headers: { token } });
+      const { data } = await axios.post('https://imagi-fy-eta.vercel.app//api/user/pay-razor', { planId }, { headers: { token } });
       if (data.success) {
         initPay(data.order)
       }
