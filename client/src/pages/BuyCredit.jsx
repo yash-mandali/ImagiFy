@@ -13,7 +13,7 @@ const BuyCredit = () => {
 
   const initPay = async (order) => {
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_S5pzQXIgN2Rnwc",
       amount: order.amount,
       currency: order.currency,
       name: 'Credits Payment',
