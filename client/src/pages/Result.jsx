@@ -41,7 +41,7 @@ const Result = () => {
       </div>
       <p className={`text-base sm:text-lg mt-3 ${!loading ? 'hidden' : ''}`}>Loading...</p>
 
-      {!isImageLoaded &&
+      {/* {!isImageLoaded &&
         <div className='flex flex-col sm:flex-row w-full max-w-xs sm:max-w-xl bg-neutral-500 rounded-full text-white text-sm sm:text-base p-1 mt-8 sm:mt-10 gap-1 sm:gap-0'>
           <input
             onChange={e => setInput(e.target.value)}
@@ -50,6 +50,29 @@ const Result = () => {
           <button
             className='bg-zinc-900 px-6 sm:px-12 md:px-16 py-3 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium hover:bg-zinc-800 transition-all whitespace-nowrap'
             type="submit">Generate</button>
+        </div>
+      } */}
+      {!isImageLoaded &&
+        <div className="w-full max-w-md px-2 mt-8">
+          <div className="flex items-center bg-neutral-500 rounded-full overflow-hidden">
+
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              type="text"
+              placeholder="Describe what you want to generate"
+              className="flex-1 bg-transparent text-white placeholder-gray-200 px-4 py-3 text-sm outline-none"
+            />
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-zinc-900 px-6 py-3 text-sm font-medium text-white rounded-full mr-1 hover:bg-zinc-800 transition disabled:opacity-60"
+            >
+              Generate
+            </button>
+
+          </div>
         </div>
       }
       {isImageLoaded &&
