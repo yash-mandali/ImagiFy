@@ -10,7 +10,7 @@ const imageRouter = require("./Routes/imageRoutes");
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(`${process.env.MONGO_URI}/imagify` || "mongodb+srv://yashmandali211:root@yashmandali.bddqxyr.mongodb.net/imagify")
+mongoose.connect(`${process.env.MONGO_URI}/Nexora AI` || "mongodb+srv://yashmandali211:root@yashmandali.bddqxyr.mongodb.net/Nexora AI")
     .then(() => console.log("MongoDB Connected..."))
     .catch((err) => console.log(err));
 

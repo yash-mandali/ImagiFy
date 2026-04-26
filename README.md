@@ -1,2 +1,2 @@
-# ImagiFy
+# Nexora AI
 Generate AI Images
